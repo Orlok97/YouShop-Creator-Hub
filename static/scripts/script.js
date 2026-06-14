@@ -11,16 +11,17 @@ const setTheme=(t)=>{
 }
 const toggleTheme=()=>{
     isDark=!isDark;
-    console.log(icon.getAttribute('name'))
     if(isDark){
         setTheme('dark');
-        icon.setAttribute('name','sunny');
+        icon.setAttribute('name','sunny-outline');
     }else{
         setTheme('light');
-        icon.setAttribute('name','moon')
+        icon.setAttribute('name','moon-outline');
     }
+    
+    icon.setAttribute('size','large');
+    icon.setAttribute('style','cursor:pointer;');
 }
 
 icon.addEventListener('click',toggleTheme);
-console.log('pagina carregada')
-
+console.log('pagina carregada');
