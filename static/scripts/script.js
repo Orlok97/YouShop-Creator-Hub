@@ -2,7 +2,7 @@ const theme=document.querySelector('html');
 const icon=document.querySelector('#themeIcon');
 const modal=document.querySelector('#modal');
 
-let isDark=false;
+let isDark=true;
 
 const youShopProducts = [
   {
