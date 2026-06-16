@@ -9,11 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
-
-        body{
-            padding-top: 120px; 
+        body {
+            padding-top: 120px;
         }
-        
+
         .bg-youshop-green {
             background-color: rgb(159, 239, 20);
         }
@@ -59,14 +58,44 @@
                         <button class="btn btn-secondary" data-bs-dismiss="modal">
                             <ion-icon name="arrow-back-outline"></ion-icon> Voltar
                         </button>
-                        <button type="button" class="btn btn-success">Gerar Roteiro com IA</button>
-                        
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" id="generate-btn"
+                            data-bs-target="#ai-response-modal">Gerar Roteiro com IA</button>
+
                     </div>
 
                 </div>
             </div>
         </div>
 
+    </div>
+
+    <div class="modal fade" id="ai-response-modal" data-bs-backdrop="static" tabindex="-2" aria-labelledby="modal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Resposta Gerada</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center" id="ai-response">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Aguarde sua resposta esta sendo gerada.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Carregando</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" data-bs-dismiss="modal" id="ai-modal-btn"
+                        disabled>fechar</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -1,7 +1,7 @@
 const theme=document.querySelector('html');
 const icon=document.querySelector('#themeIcon');
 const modal=document.querySelector('#modal');
-
+const aiResponse=document.querySelector('#ai-response');
 let isDark=true;
 
 const youShopProducts = [
@@ -125,6 +125,37 @@ const createCards=()=>{
     }
     produtoContainer.innerHTML=card;
 }
+
+const generateGeminiResponse= async()=>{
+  let nome=document.querySelector('#produto-nome').innerHTML;
+  let desc=document.querySelector('#produto-desc').innerHTML;
+  console.log(nome)
+  try{
+    const response= await fetch('/api/gemini',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        'content':`nome do produto: ${nome}, descrição: ${desc}`
+      })
+    })
+
+    if(!response.ok){
+      throw new Error('erro ao enviar os dados')
+    }
+
+    const data= await response.json()
+    if(data){
+      aiResponse.innerHTML=data.response;
+      document.querySelector('#ai-modal-btn').removeAttribute('disabled');
+    }
+    
+  }catch(err){
+    console.log("erro: "+err)
+  }
+}
+document.querySelector('#generate-btn').addEventListener('click',generateGeminiResponse)
 
 const openCardDetails=(index)=>{
     let i = parseInt(index, 10);
