@@ -1,5 +1,3 @@
-# README.md
-
 # YouShop Creator Hub 🐉
 
 O **YouShop Creator Hub** é um projeto de inovação desenvolvido como parte do **Processo Seletivo para o Programa de Estágio YouShop 2026**.
@@ -21,8 +19,8 @@ O funcionamento é simples e direto na interface:
 ### 1. Clonar o Repositório e Accesse a Passta do Projeto
 
 ```bash
-git clone https://github.com/Orlok97/PI-V-API.git
-cd project
+git clone https://github.com/Orlok97/YouShop-Creator-Hub.git
+cd YouShop-Creator-Hub
 ```
 
 ### 2. Criar e Ativar o Ambiente Virtual (venv)
@@ -36,7 +34,7 @@ cd project
 
  ```bash
 python -m venv venv
-.\venv\Scripts\activate
+source venv/bin/activate
  ```
 
  ### 3. Instalar as Dependências
