@@ -130,7 +130,7 @@ const generateGeminiResponse= async()=>{
   aiResponse.innerHTML=`
     <div class="row">
           <div class="col-12">
-              <p>Aguarde sua resposta esta sendo gerada.</p>
+              <p>Aguarde, sua resposta esta sendo gerada.</p>
           </div>
     </div>
     <div class="d-flex justify-content-center">
